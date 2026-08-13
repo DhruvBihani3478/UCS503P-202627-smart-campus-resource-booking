@@ -1,0 +1,248 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% Page settings
+\geometry{
+    margin=1in
+}
+
+\onehalfspacing
+
+\title{
+    \textbf{Project Proposal}\\
+    \vspace{0.5cm}
+    \large Smart Campus Resource Booking System
+}
+
+\author{
+    \textbf{UCS503: Software Engineering}\\
+    \vspace{0.3cm}
+    Team Members:\\
+    Dhruv Bihani\\
+    Aditya Srivastav
+}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+
+\section{Introduction}
+
+Educational institutions have various resources such as classrooms, laboratories, seminar halls, projectors, and other equipment that need efficient management. Traditional manual booking methods often result in scheduling conflicts, inefficient resource utilization, and difficulties in tracking reservations.
+
+The \textbf{Smart Campus Resource Booking System} aims to provide a centralized digital platform where students, faculty members, and administrators can efficiently manage resource availability and bookings.
+
+This project is an extension of an existing database management system project and focuses on transforming it into a complete software application following software engineering principles.
+
+
+\section{Problem Statement}
+
+In many institutions, resource allocation is managed manually or through disconnected systems. This creates several issues:
+
+\begin{itemize}
+    \item Double booking of resources.
+    \item Lack of real-time resource availability information.
+    \item Difficulty in managing booking requests.
+    \item Poor tracking of resource utilization.
+    \item Increased administrative workload.
+\end{itemize}
+
+A software solution is required to automate the booking process and provide an efficient resource management system.
+
+
+\section{Objectives}
+
+The main objectives of this project are:
+
+\begin{itemize}
+    \item To develop a centralized resource booking platform.
+    \item To allow users to view available resources and request bookings.
+    \item To provide administrators with resource management capabilities.
+    \item To prevent booking conflicts using automated validation.
+    \item To maintain booking records and generate reports.
+\end{itemize}
+
+
+\section{Proposed Solution}
+
+The proposed system will be a web-based application that provides different functionalities based on user roles.
+
+Users will be able to:
+
+\begin{itemize}
+    \item Register and log in.
+    \item View available resources.
+    \item Submit booking requests.
+    \item Track and manage their bookings.
+\end{itemize}
+
+
+Administrators will be able to:
+
+\begin{itemize}
+    \item Add, update, and remove resources.
+    \item Approve or reject booking requests.
+    \item Monitor resource utilization.
+    \item Generate reports.
+\end{itemize}
+
+
+\section{Scope of the Project}
+
+The scope of the project includes the following modules:
+
+
+\subsection{User Management}
+
+\begin{itemize}
+    \item User registration and authentication.
+    \item Role-based access control.
+\end{itemize}
+
+
+\subsection{Resource Management}
+
+\begin{itemize}
+    \item Adding and managing resources.
+    \item Categorizing resources.
+    \item Tracking resource availability.
+\end{itemize}
+
+
+\subsection{Booking Management}
+
+\begin{itemize}
+    \item Checking resource availability.
+    \item Creating booking requests.
+    \item Approving or rejecting requests.
+    \item Maintaining booking history.
+\end{itemize}
+
+
+\subsection{Dashboard and Reports}
+
+\begin{itemize}
+    \item User booking dashboard.
+    \item Admin management dashboard.
+    \item Resource utilization reports.
+\end{itemize}
+
+
+
+\section{Major Modules}
+
+
+\subsection{Authentication Module}
+
+This module handles user registration, login, and authorization based on user roles.
+
+
+\subsection{Resource Module}
+
+This module manages resource details including resource name, category, and availability.
+
+
+\subsection{Booking Module}
+
+This module handles booking requests, approval workflow, and prevents scheduling conflicts.
+
+
+\subsection{Admin Module}
+
+The admin module provides functionality to manage users, resources, and bookings.
+
+
+\subsection{Reporting Module}
+
+This module provides booking history and resource usage statistics.
+
+
+\section{Technology Stack}
+
+
+\begin{itemize}
+    \item \textbf{Frontend:} HTML, CSS, JavaScript, Bootstrap
+    \item \textbf{Backend:} Java, JDBC, Servlets/JSP
+    \item \textbf{Database:} Oracle Database
+    \item \textbf{Version Control:} Git and GitHub
+    \item \textbf{Documentation:} LaTeX
+\end{itemize}
+
+
+
+\section{Development Methodology}
+
+The project will follow an incremental development approach.
+
+The development phases are:
+
+\begin{enumerate}
+    \item Requirement Analysis
+    \item System Design
+    \item Database Design
+    \item Prototype Development
+    \item Testing and Improvement
+    \item Final Deployment and Documentation
+\end{enumerate}
+
+
+
+\section{Expected Outcomes}
+
+At the end of the project, the system will provide:
+
+\begin{itemize}
+    \item A functional web-based resource booking application.
+    \item Efficient resource scheduling.
+    \item Reduced booking conflicts.
+    \item Improved resource management.
+    \item Complete software documentation.
+\end{itemize}
+
+
+
+\section{Future Enhancements}
+
+Future improvements may include:
+
+\begin{itemize}
+    \item Email notifications.
+    \item QR-based booking verification.
+    \item Mobile application support.
+    \item AI-based resource utilization prediction.
+\end{itemize}
+
+
+
+\section{Team Details}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Name} & \textbf{Role} \\
+\hline
+Dhruv Bihani & Backend and Database Development \\
+\hline
+Aditya Srivastav & Frontend and Testing \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\end{document}
