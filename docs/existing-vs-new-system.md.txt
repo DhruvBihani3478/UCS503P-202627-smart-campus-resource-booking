@@ -1,0 +1,71 @@
+# Existing System vs Proposed Software System
+
+## Overview
+
+The Smart Campus Resource Booking System is an extension of a Resource Booking System previously developed as a DBMS project using Oracle Database.
+
+The previous project primarily focused on database design, SQL operations, relationships, procedures, functions, triggers, and data management.
+
+The current project aims to extend this database foundation into a complete web-based software application.
+
+---
+
+## Comparison
+
+| Existing DBMS Project | Proposed Software Engineering Project |
+|---|---|
+| Oracle database | Complete web-based application |
+| Tables and relationships | User interface |
+| SQL queries | Java application logic |
+| User records | Authentication and sessions |
+| Resource records | Resource management interface |
+| Slot management | User slot selection interface |
+| Booking procedures | Complete booking workflow |
+| Database functions | Application integration |
+| Database triggers | System-level workflow support |
+| Resource usage reports | Dashboard and reporting interface |
+| Database constraints | Application-level validation |
+| - | Role-based access control |
+| - | User dashboard |
+| - | Administrator dashboard |
+| - | Functional testing |
+| - | Integration testing |
+| - | Software documentation |
+
+---
+
+## Major Additions
+
+The following components will be added to transform the existing database project into a complete software system:
+
+### User Authentication
+
+Users will be able to securely log in and access features according to their assigned roles.
+
+### Web-Based User Interface
+
+A user-friendly interface will be developed for interacting with resources, slots, and booking operations.
+
+### Role-Based Access Control
+
+Different functionality will be available to Students, Faculty members, and Administrators.
+
+### Booking Workflow
+
+The application will provide a complete workflow from slot selection to booking request and administrative approval or rejection.
+
+### Dashboards
+
+Separate interfaces will be provided for users and administrators.
+
+### Testing
+
+The system will be tested through functional, integration, database, and user acceptance testing.
+
+---
+
+## Conclusion
+
+The proposed Software Engineering project is not simply a repetition of the previous DBMS project.
+
+The existing database will be used as a foundation, while the new project will focus on designing, developing, testing, and documenting a complete web-based software system.

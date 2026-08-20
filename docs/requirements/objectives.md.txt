@@ -1,0 +1,23 @@
+# Project Objectives
+
+## Primary Objective
+
+To develop a centralized web-based Smart Campus Resource Booking System that enables efficient management of campus resources and booking requests.
+
+## Specific Objectives
+
+1. To develop a web-based platform for managing campus resources.
+
+2. To allow authenticated users to view available resources and booking slots.
+
+3. To allow users to submit and manage booking requests.
+
+4. To prevent invalid or conflicting bookings through availability validation.
+
+5. To provide administrators with functionality for managing resources, slots, users, and booking requests.
+
+6. To maintain booking history and booking status information.
+
+7. To provide dashboards and basic resource utilization information.
+
+8. To test and validate the system using functional, integration, and database testing.

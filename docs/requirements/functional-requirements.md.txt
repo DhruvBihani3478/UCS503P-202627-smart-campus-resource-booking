@@ -1,0 +1,104 @@
+# Functional Requirements
+
+## FR-01: User Authentication
+
+The system shall allow registered users to log in using their credentials.
+
+The system shall provide logout functionality.
+
+---
+
+## FR-02: Role-Based Access
+
+The system shall provide different functionality based on the user's role.
+
+The supported roles are:
+
+- Student
+- Faculty
+- Administrator
+
+---
+
+## FR-03: View Resources
+
+The system shall allow users to view available campus resources.
+
+Each resource shall display relevant information.
+
+---
+
+## FR-04: View Available Slots
+
+The system shall allow users to view available time slots for a selected resource.
+
+---
+
+## FR-05: Create Booking Request
+
+The system shall allow authorized users to select an available slot and submit a booking request.
+
+---
+
+## FR-06: Booking Validation
+
+The system shall validate slot availability before creating a booking request.
+
+A booking shall not be created if the selected slot is unavailable.
+
+---
+
+## FR-07: View Booking Status
+
+The system shall allow users to view the status of their booking requests.
+
+Possible booking statuses include:
+
+- Pending
+- Approved
+- Rejected
+- Cancelled
+
+---
+
+## FR-08: Cancel Booking
+
+The system shall allow users to cancel eligible bookings.
+
+---
+
+## FR-09: Manage Resources
+
+The administrator shall be able to add, update, and remove resources.
+
+---
+
+## FR-10: Manage Slots
+
+The administrator shall be able to create, update, and manage resource booking slots.
+
+---
+
+## FR-11: Manage Booking Requests
+
+The administrator shall be able to view pending booking requests.
+
+The administrator shall be able to approve or reject booking requests.
+
+---
+
+## FR-12: Booking History
+
+The system shall maintain a record of booking history for users.
+
+---
+
+## FR-13: Dashboard
+
+The system shall provide separate dashboard functionality for users and administrators.
+
+---
+
+## FR-14: Resource Usage Information
+
+The system shall provide administrators with basic information about resource usage and booking activity.

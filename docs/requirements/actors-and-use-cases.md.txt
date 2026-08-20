@@ -1,0 +1,86 @@
+# Actors and Use Cases
+
+## 1. Actors
+
+The Smart Campus Resource Booking System has three primary actors:
+
+### Student
+
+A student can:
+
+- Log in to the system.
+- View available resources.
+- View available slots.
+- Submit booking requests.
+- View booking status.
+- View booking history.
+- Cancel eligible bookings.
+
+---
+
+### Faculty
+
+A faculty member can:
+
+- Log in to the system.
+- View available resources.
+- View available slots.
+- Submit booking requests.
+- View booking status.
+- View booking history.
+- Cancel eligible bookings.
+
+---
+
+### Administrator
+
+An administrator can:
+
+- Log in to the system.
+- Manage users.
+- Add resources.
+- Update resources.
+- Remove resources.
+- Manage available slots.
+- View booking requests.
+- Approve booking requests.
+- Reject booking requests.
+- View booking records.
+- View resource usage information.
+
+---
+
+## 2. Summary of Use Cases
+
+| Actor | Use Cases |
+|---|---|
+| Student | Login, View Resources, View Slots, Create Booking, View Status, Cancel Booking, View History |
+| Faculty | Login, View Resources, View Slots, Create Booking, View Status, Cancel Booking, View History |
+| Administrator | Login, Manage Users, Manage Resources, Manage Slots, Approve/Reject Bookings, View Reports |
+
+---
+
+## 3. Primary System Flow
+
+The primary booking flow is:
+
+```text
+User Login
+    ↓
+View Resources
+    ↓
+Select Resource
+    ↓
+View Available Slots
+    ↓
+Select Slot
+    ↓
+Submit Booking Request
+    ↓
+System Validates Availability
+    ↓
+Booking Created as Pending
+    ↓
+Administrator Reviews Request
+    ↓
+Approved / Rejected

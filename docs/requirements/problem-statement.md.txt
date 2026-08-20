@@ -1,0 +1,13 @@
+# Problem Statement
+
+Educational institutions contain various shared resources such as classrooms, laboratories, seminar halls, project rooms, and other facilities. These resources need to be managed efficiently to ensure their proper utilization.
+
+Manual or disconnected resource booking processes can create problems such as double booking, difficulty in checking resource availability, lack of centralized booking records, and increased administrative effort.
+
+The existing Resource Booking System developed as a DBMS project provides a database-level solution for storing and managing resource and booking information. However, it does not provide a complete web-based software interface through which users can easily interact with the system.
+
+The Smart Campus Resource Booking System aims to address this problem by developing a centralized web-based application. The system will allow users to view available resources and time slots, submit booking requests, track booking status, and manage their bookings.
+
+Administrators will be able to manage resources, manage available slots, review booking requests, approve or reject bookings, and monitor booking records.
+
+The proposed system aims to reduce booking conflicts, improve resource utilization, and provide a structured and user-friendly resource management process.

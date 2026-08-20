@@ -1,0 +1,57 @@
+# Non-Functional Requirements
+
+## NFR-01: Usability
+
+The system should provide a simple and user-friendly interface.
+
+Users should be able to perform common tasks with minimal complexity.
+
+---
+
+## NFR-02: Security
+
+The system shall require authentication before allowing access to protected functionality.
+
+User passwords shall not be stored in plain text.
+
+Role-based access control shall restrict users from accessing unauthorized functionality.
+
+---
+
+## NFR-03: Performance
+
+The system should provide reasonable response times for common operations such as viewing resources, viewing slots, and creating booking requests.
+
+---
+
+## NFR-04: Reliability
+
+The system should maintain correct booking and resource information.
+
+The application should handle invalid input and database errors appropriately.
+
+---
+
+## NFR-05: Data Consistency
+
+The system shall maintain consistent data between the application and Oracle Database.
+
+Database constraints and application-level validation shall be used to prevent invalid records.
+
+---
+
+## NFR-06: Maintainability
+
+The application should follow a modular structure to make future modifications and maintenance easier.
+
+---
+
+## NFR-07: Compatibility
+
+The web application should be accessible through modern web browsers.
+
+---
+
+## NFR-08: Scalability
+
+The system should be designed so that additional resources, users, and features can be added in the future without requiring a complete redesign.

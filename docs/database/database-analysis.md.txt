@@ -1,0 +1,171 @@
+# Database Analysis
+
+## 1. Overview
+
+The Smart Campus Resource Booking System is based on an existing Oracle Database implementation developed during a previous DBMS project.
+
+The purpose of the database is to manage users, departments, campus resources, available time slots, booking records, and resource-related activity logs.
+
+The existing database will serve as the foundation for the current Software Engineering project. Instead of redesigning the database completely, the existing structure will be analyzed and extended where necessary to support a complete web-based application.
+
+---
+
+## 2. Existing Tables
+
+The current database consists of the following main tables:
+
+1. Department
+2. Users
+3. Resources
+4. Slot
+5. Booking
+6. Resource Log
+
+---
+
+## 3. Department Table
+
+The Department table stores information about different departments within the institution.
+
+It is related to the Users table and Resources table.
+
+### Purpose
+
+- Store department information.
+- Associate users with departments.
+- Associate resources with departments.
+
+---
+
+## 4. Users Table
+
+The Users table stores information about users of the system.
+
+The current system supports different user roles, including:
+
+- Student
+- Faculty
+- Administrator
+
+### Purpose
+
+- Maintain user information.
+- Associate users with departments.
+- Identify the role of each user.
+
+### Proposed Modification
+
+The table will be extended to support user authentication by adding secure password storage.
+
+---
+
+## 5. Resources Table
+
+The Resources table stores information about bookable campus resources.
+
+Examples include:
+
+- Classrooms
+- Laboratories
+- Seminar halls
+- Other shared facilities
+
+### Purpose
+
+- Store resource details.
+- Associate resources with departments.
+- Support resource availability and booking operations.
+
+---
+
+## 6. Slot Table
+
+The Slot table stores available booking time slots for each resource.
+
+Each slot is associated with a particular resource and contains information such as:
+
+- Date
+- Start time
+- End time
+- Slot status
+
+### Purpose
+
+- Define bookable time periods.
+- Allow users to select available slots.
+- Support availability checking.
+
+For the initial version of the web application, the existing slot-based booking model will be retained.
+
+---
+
+## 7. Booking Table
+
+The Booking table stores booking requests created by users.
+
+Each booking connects a user with a selected resource slot.
+
+The booking status is used to track the state of a booking.
+
+### Proposed Booking Statuses
+
+- PENDING
+- APPROVED
+- REJECTED
+- CANCELLED
+
+### Purpose
+
+- Maintain booking records.
+- Track booking status.
+- Support approval and rejection workflows.
+- Maintain booking history.
+
+---
+
+## 8. Resource Log Table
+
+The Resource Log table stores activity related to resource usage and booking operations.
+
+### Purpose
+
+- Maintain activity records.
+- Support monitoring and reporting.
+- Track important booking-related events.
+
+---
+
+## 9. Existing Database Functionality
+
+The existing DBMS project already includes database-level functionality for:
+
+- Checking slot availability.
+- Creating bookings.
+- Cancelling bookings.
+- Updating booking status.
+- Maintaining booking-related logs.
+- Generating resource usage information.
+- Using procedures and functions for booking operations.
+- Using triggers for maintaining activity records.
+- Using views for simplified data access.
+
+---
+
+## 10. Database Relationships
+
+The main relationships in the database are:
+
+```text
+Department
+    │
+    ├── Users
+    │
+    └── Resources
+             │
+             ▼
+            Slot
+             │
+             ▼
+           Booking
+
+Resources ─────► Resource Log
