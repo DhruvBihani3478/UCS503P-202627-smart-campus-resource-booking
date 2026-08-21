@@ -1,0 +1,202 @@
+# Technology Stack
+
+## 1. Overview
+
+The Smart Campus Resource Booking System will be developed as a web-based application. The technology stack has been selected to support the existing Oracle Database implementation while allowing the project to be developed incrementally during the semester.
+
+The application will use Java for backend development, JDBC for database connectivity, and standard web technologies for the user interface.
+
+---
+
+## 2. Frontend
+
+The frontend will provide the user interface through which students, faculty members, and administrators interact with the system.
+
+### Technologies
+
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- JSP
+
+### Purpose
+
+The frontend will be responsible for:
+
+- Displaying application pages.
+- Collecting user input.
+- Displaying available resources.
+- Displaying available booking slots.
+- Displaying booking information and status.
+- Providing user and administrator dashboards.
+- Providing responsive and user-friendly interfaces.
+
+---
+
+## 3. Backend
+
+The backend will handle the main application logic and communication between the user interface and the database.
+
+### Technologies
+
+- Java
+- Java Servlets
+- JSP
+
+### Responsibilities
+
+The backend will handle:
+
+- User authentication.
+- Session management.
+- Role-based access control.
+- Resource management.
+- Slot management.
+- Booking request processing.
+- Booking validation.
+- Booking cancellation.
+- Approval and rejection of booking requests.
+- Communication with the Oracle Database.
+
+---
+
+## 4. Database
+
+The application will use Oracle Database as the primary database management system.
+
+The existing database from the previous DBMS project will be reused and modified where required.
+
+### Main Entities
+
+The database currently includes:
+
+- Department
+- Users
+- Resources
+- Slot
+- Booking
+- Resource Log
+
+### Database Features
+
+The project will use database functionality such as:
+
+- Primary keys
+- Foreign keys
+- Constraints
+- Sequences
+- Procedures
+- Functions
+- Triggers
+- Views
+- Indexes
+
+---
+
+## 5. Database Connectivity
+
+### Technology
+
+- JDBC (Java Database Connectivity)
+
+JDBC will be used to establish communication between the Java application and the Oracle Database.
+
+The DAO (Data Access Object) pattern will be used to separate database operations from the application logic.
+
+Examples of DAO classes include:
+
+- UserDAO
+- DepartmentDAO
+- ResourceDAO
+- SlotDAO
+- BookingDAO
+- ResourceLogDAO
+
+---
+
+## 6. Web Server
+
+### Technology
+
+- Apache Tomcat
+
+Apache Tomcat will be used to deploy and run the Java web application.
+
+It will process HTTP requests and execute the Java Servlets and JSP pages used by the application.
+
+---
+
+## 7. Development Tools
+
+The following tools will be used during development:
+
+- Visual Studio Code or IntelliJ IDEA
+- Oracle Database
+- Oracle SQL Developer
+- Apache Tomcat
+- Git
+- GitHub
+
+---
+
+## 8. Version Control
+
+### Technologies
+
+- Git
+- GitHub
+
+Git will be used for version control, while GitHub will be used to host the project repository and maintain project documentation.
+
+The repository will also contain:
+
+- Source code
+- Documentation
+- Journal entries
+- Design diagrams
+- Reports
+- Project updates
+
+---
+
+## 9. Documentation
+
+### Technologies
+
+- Markdown
+- LaTeX
+
+Markdown will be used for project documentation, journals, and repository content.
+
+LaTeX will be used for preparing the required academic project reports.
+
+---
+
+## 10. Summary of Technology Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML, CSS, JavaScript, Bootstrap, JSP |
+| Backend | Java, Servlets |
+| Application Server | Apache Tomcat |
+| Database | Oracle Database |
+| Database Connectivity | JDBC |
+| Data Access | DAO Pattern |
+| Version Control | Git and GitHub |
+| Documentation | Markdown and LaTeX |
+
+---
+
+## 11. Future Technology Considerations
+
+The initial implementation will use Servlets, JSP, and JDBC to maintain a manageable project scope and build upon the team's current Java knowledge.
+
+In future versions, the system may be extended using:
+
+- Spring Boot
+- REST APIs
+- React or another frontend framework
+- Cloud deployment
+- Mobile application support
+- Email notification services

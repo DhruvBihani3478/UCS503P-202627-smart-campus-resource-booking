@@ -1,3 +1,4 @@
+```latex
 \documentclass[12pt,a4paper]{article}
 
 % Packages
@@ -7,111 +8,283 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{mathptmx}
 
 % Page settings
 \geometry{
-    margin=1in
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in
 }
 
 \onehalfspacing
 
-\title{
-    \textbf{Project Proposal}\\
-    \vspace{0.5cm}
-    \large Smart Campus Resource Booking System
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
 }
-
-\author{
-    \textbf{UCS503: Software Engineering}\\
-    \vspace{0.3cm}
-    Team Members:\\
-    Dhruv Bihani\\
-    Aditya Srivastav
-}
-
-\date{\today}
-
 
 \begin{document}
 
-\maketitle
+% =========================================================
+% COVER PAGE
+% =========================================================
+
+\begin{titlepage}
+
+\begin{center}
+
+\vspace*{0.5cm}
+
+{\fontsize{25}{30}\selectfont
+\textbf{Smart Campus Resource Booking System}
+}
+
+\vspace{1.2cm}
+
+{\Large
+Project Proposal for UCS503P
+}
+
+\vspace{0.25cm}
+
+{\Large
+Submitted to: \textbf{Ms. Paramveer Sidhu}
+}
+
+\vspace{0.25cm}
+
+{\Large
+\textbf{Thapar Institute of Engineering and Technology}
+}
+
+\vspace{2.5cm}
+
+\begin{tabular}{cc}
+
+\begin{minipage}{0.38\textwidth}
+\centering
+{\Large \textbf{Dhruv Bihani}}\\[0.25cm]
+{\large Roll No: 1024030736}\\[0.15cm]
+{\large dbihani\_be24@thapar.edu}
+\end{minipage}
+
+&
+\begin{minipage}{0.38\textwidth}
+\centering
+{\Large \textbf{Aditya Srivastava}}\\[0.25cm]
+{\large Roll No: 1024030745}\\[0.15cm]
+{\large asrivastava\_be24@thapar.edu}
+\end{minipage}
+
+\end{tabular}
+
+\vfill
+
+{\Large
+August 2026
+}
+
+\end{center}
+
+\end{titlepage}
+
+
+% =========================================================
+% TABLE OF CONTENTS
+% =========================================================
 
 \tableofcontents
 
 \newpage
 
 
+% =========================================================
+% 1. INTRODUCTION
+% =========================================================
+
 \section{Introduction}
 
-Educational institutions have various resources such as classrooms, laboratories, seminar halls, projectors, and other equipment that need efficient management. Traditional manual booking methods often result in scheduling conflicts, inefficient resource utilization, and difficulties in tracking reservations.
+Educational institutions have various resources such as classrooms, laboratories, seminar halls, projectors, sports facilities, and other equipment that require efficient management and scheduling. In many cases, the process of reserving these resources is handled manually or through disconnected systems, which can lead to scheduling conflicts, inefficient resource utilization, and difficulty in tracking reservations.
 
-The \textbf{Smart Campus Resource Booking System} aims to provide a centralized digital platform where students, faculty members, and administrators can efficiently manage resource availability and bookings.
+The \textbf{Smart Campus Resource Booking System} aims to provide a centralized web-based platform through which students, faculty members, and administrators can efficiently manage campus resources and their bookings.
 
-This project is an extension of an existing database management system project and focuses on transforming it into a complete software application following software engineering principles.
+The proposed system will allow users to view available resources, submit booking requests, track their bookings, and receive information regarding the status of their requests. Administrators will be able to manage resources, approve or reject booking requests, monitor utilization, and maintain the overall system.
 
+This project is an extension of a \textbf{Resource Booking System developed as a DBMS project using Oracle}. The previous project primarily focused on database design, relationships, constraints, and SQL-based operations. The proposed UCS503 project will extend this foundation into a complete software application by introducing a user interface, application logic, authentication, booking workflows, validation, and software engineering practices.
+
+
+% =========================================================
+% 2. PROJECT BACKGROUND
+% =========================================================
+
+\section{Project Background}
+
+The initial Resource Booking System was developed as part of a Database Management System project. The system was implemented using Oracle Database and focused primarily on the storage and management of information related to users, resources, and bookings.
+
+The existing database provides a foundation for the proposed system. Instead of developing the database component from the beginning, the existing design will be analyzed, improved where necessary, and integrated with the new application layer.
+
+The major transition planned in this project is:
+
+\begin{center}
+\textbf{DBMS Project}
+\quad $\longrightarrow$ \quad
+\textbf{Complete Web-Based Software System}
+\end{center}
+
+The new system will therefore demonstrate how an existing database-oriented solution can be evolved into a complete software product using systematic software engineering practices.
+
+
+% =========================================================
+% 3. PROBLEM STATEMENT
+% =========================================================
 
 \section{Problem Statement}
 
-In many institutions, resource allocation is managed manually or through disconnected systems. This creates several issues:
+Campus resources are shared among a large number of students, faculty members, and departments. Managing these resources manually can result in several operational problems.
+
+The major problems include:
 
 \begin{itemize}
-    \item Double booking of resources.
-    \item Lack of real-time resource availability information.
+    \item Double booking of the same resource.
+    \item Lack of centralized resource availability information.
     \item Difficulty in managing booking requests.
-    \item Poor tracking of resource utilization.
+    \item Lack of proper booking history and tracking.
+    \item Inefficient utilization of campus resources.
     \item Increased administrative workload.
+    \item Difficulty in monitoring and generating resource usage reports.
 \end{itemize}
 
-A software solution is required to automate the booking process and provide an efficient resource management system.
+A centralized software solution is therefore required to automate the resource booking process, reduce scheduling conflicts, and provide efficient management of campus resources.
 
+
+% =========================================================
+% 4. OBJECTIVES
+% =========================================================
 
 \section{Objectives}
 
-The main objectives of this project are:
+The primary objective of this project is to develop a web-based
+Smart Campus Resource Booking System that provides a centralized
+platform for managing and scheduling campus resources.
+
+The specific objectives are:
 
 \begin{itemize}
-    \item To develop a centralized resource booking platform.
-    \item To allow users to view available resources and request bookings.
-    \item To provide administrators with resource management capabilities.
-    \item To prevent booking conflicts using automated validation.
-    \item To maintain booking records and generate reports.
+    \item To develop a web-based system that allows authenticated
+    users to browse resources, check availability, and submit
+    booking requests.
+
+    \item To implement automated availability and conflict
+    validation to prevent overlapping bookings for the same
+    resource and time slot.
+
+    \item To provide administrators with functionality for managing
+    resources, users, and booking requests.
+
+    \item To maintain booking history and provide dashboards for
+    monitoring current and previous reservations.
+
+    \item To test and validate the system through functional,
+    integration, and user acceptance testing.
 \end{itemize}
 
+\section{System Architecture}
+
+The proposed system will follow a layered web application
+architecture consisting of the presentation layer, application
+layer, and database layer.
+
+\begin{itemize}
+    \item \textbf{Presentation Layer:} Provides the web interface
+    through HTML, CSS, JavaScript, and Bootstrap.
+
+    \item \textbf{Application Layer:} Implements authentication,
+    booking logic, resource management, validation, and
+    administrator functionality using Java Servlets/JSP.
+
+    \item \textbf{Database Layer:} Stores users, resources,
+    bookings, availability, and related information using Oracle
+    Database. JDBC will be used for communication between the
+    Java application and the database.
+\end{itemize}
+
+The general interaction flow is:
+
+\begin{center}
+User
+$\rightarrow$
+Web Interface
+$\rightarrow$
+Java Application
+$\rightarrow$
+JDBC
+$\rightarrow$
+Oracle Database
+\end{center}
+% =========================================================
+% 5. PROPOSED SOLUTION
+% =========================================================
 
 \section{Proposed Solution}
 
-The proposed system will be a web-based application that provides different functionalities based on user roles.
+The proposed system will be developed as a web-based application that connects users with campus resources through a centralized booking platform.
+
+The system will provide different functionalities according to the user's role.
+
+\subsection{User Functionality}
 
 Users will be able to:
 
 \begin{itemize}
-    \item Register and log in.
-    \item View available resources.
+    \item Register and log in to the system.
+    \item Browse available campus resources.
+    \item Search and filter resources.
+    \item Check resource availability.
     \item Submit booking requests.
-    \item Track and manage their bookings.
+    \item Cancel eligible bookings.
+    \item View current and previous bookings.
+    \item Track the status of booking requests.
 \end{itemize}
 
+
+\subsection{Administrator Functionality}
 
 Administrators will be able to:
 
 \begin{itemize}
+    \item Log in through an administrator account.
     \item Add, update, and remove resources.
+    \item Manage resource categories.
     \item Approve or reject booking requests.
-    \item Monitor resource utilization.
-    \item Generate reports.
+    \item Manage user accounts.
+    \item Monitor bookings.
+    \item View resource utilization.
+    \item Generate basic reports.
 \end{itemize}
 
 
+% =========================================================
+% 6. SCOPE
+% =========================================================
+
 \section{Scope of the Project}
 
-The scope of the project includes the following modules:
+The project will focus on developing a functional campus resource booking system with the following major areas.
 
 
 \subsection{User Management}
 
 \begin{itemize}
     \item User registration and authentication.
+    \item Login and logout functionality.
     \item Role-based access control.
+    \item User profile management.
 \end{itemize}
 
 
@@ -120,6 +293,7 @@ The scope of the project includes the following modules:
 \begin{itemize}
     \item Adding and managing resources.
     \item Categorizing resources.
+    \item Maintaining resource details.
     \item Tracking resource availability.
 \end{itemize}
 
@@ -128,8 +302,10 @@ The scope of the project includes the following modules:
 
 \begin{itemize}
     \item Checking resource availability.
+    \item Selecting date and time slots.
     \item Creating booking requests.
-    \item Approving or rejecting requests.
+    \item Approving or rejecting booking requests.
+    \item Preventing conflicting bookings.
     \item Maintaining booking history.
 \end{itemize}
 
@@ -138,111 +314,261 @@ The scope of the project includes the following modules:
 
 \begin{itemize}
     \item User booking dashboard.
-    \item Admin management dashboard.
+    \item Administrator dashboard.
+    \item Upcoming booking information.
+    \item Booking statistics.
     \item Resource utilization reports.
 \end{itemize}
 
 
+% =========================================================
+% 7. MAJOR MODULES
+% =========================================================
 
 \section{Major Modules}
 
-
 \subsection{Authentication Module}
 
-This module handles user registration, login, and authorization based on user roles.
+This module will handle user registration, login, logout, and authorization. Access to different system functionalities will be controlled according to the user's role.
 
+\subsection{Resource Management Module}
 
-\subsection{Resource Module}
-
-This module manages resource details including resource name, category, and availability.
-
+This module will manage the resources available within the campus. Administrators will be able to add, update, remove, and categorize resources.
 
 \subsection{Booking Module}
 
-This module handles booking requests, approval workflow, and prevents scheduling conflicts.
+The booking module will allow users to request resources for specific dates and time slots. The system will validate availability and prevent conflicting bookings.
+
+\subsection{Administration Module}
+
+The administration module will provide administrators with functionality for managing users, resources, booking requests, and system information.
+
+\subsection{Dashboard and Reporting Module}
+
+This module will provide summarized information about bookings and resource utilization. Administrators will be able to monitor booking activity and generate basic reports.
 
 
-\subsection{Admin Module}
-
-The admin module provides functionality to manage users, resources, and bookings.
-
-
-\subsection{Reporting Module}
-
-This module provides booking history and resource usage statistics.
-
+% =========================================================
+% 8. TECHNOLOGY STACK
+% =========================================================
 
 \section{Technology Stack}
 
+The proposed technology stack is:
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{>{\bfseries}p{4cm} p{8cm}}
+\toprule
+Category & Technology \\
+\midrule
+Frontend & HTML, CSS, JavaScript, Bootstrap \\
+Backend & Java, Servlets/JSP, JDBC \\
+Database & Oracle Database \\
+Version Control & Git and GitHub \\
+Development Environment & VS Code / IntelliJ IDEA \\
+Documentation & LaTeX \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% =========================================================
+% 9. DEVELOPMENT METHODOLOGY
+% =========================================================
+
+\section{Methodology}
+
+The project will follow an incremental software development
+approach in which the system will be developed, tested, evaluated,
+and improved in multiple iterations.
+
+\subsection{Requirement Analysis}
+
+The functional and non-functional requirements of the system will
+be identified. User roles, resource management requirements,
+booking workflows, and system constraints will be documented.
+
+\subsection{System Design}
+
+The system architecture, database structure, user interfaces, and
+major system workflows will be designed. UML diagrams such as
+use-case, activity, class, and sequence diagrams will be used where
+appropriate.
+
+\subsection{Database Analysis and Integration}
+
+The existing Oracle database developed during the previous DBMS
+project will be reviewed and refined where required. The database
+will then be integrated with the Java application using JDBC.
+
+\subsection{Application Development}
+
+The application will be developed incrementally. Authentication,
+resource management, booking management, administrator
+functionality, and dashboards will be implemented as separate
+functional modules.
+
+\subsection{Integration}
+
+The frontend, Java application layer, and Oracle database will be
+integrated to form a complete working system. Booking validation
+will be implemented to prevent conflicting reservations.
+
+\subsection{Testing and Validation}
 
 \begin{itemize}
-    \item \textbf{Frontend:} HTML, CSS, JavaScript, Bootstrap
-    \item \textbf{Backend:} Java, JDBC, Servlets/JSP
-    \item \textbf{Database:} Oracle Database
-    \item \textbf{Version Control:} Git and GitHub
-    \item \textbf{Documentation:} LaTeX
+    \item \textbf{Functional Testing:} Verify individual system
+    features such as login, resource search, booking, cancellation,
+    and approval.
+
+    \item \textbf{Integration Testing:} Verify communication between
+    the frontend, Java application, and Oracle database.
+
+    \item \textbf{Database Testing:} Verify data consistency,
+    constraints, relationships, and correct storage of booking
+    information.
+
+    \item \textbf{Conflict Testing:} Verify that overlapping
+    bookings for the same resource cannot be created.
+
+    \item \textbf{User Acceptance Testing:} Evaluate whether the
+    system meets the expected workflow and usability requirements.
 \end{itemize}
 
+\subsection{Improvement and Deployment}
+
+Based on testing and evaluation feedback, identified issues will
+be resolved and the system will be refined before final deployment
+and presentation.
+
+\section{Project Timeline}
+
+The project will be developed incrementally throughout the semester.
+The proposed schedule is shown below.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{2cm} p{7cm} p{3cm}}
+\toprule
+\textbf{Weeks} & \textbf{Activities} & \textbf{Deliverable} \\
+\midrule
+W1--W2 & Problem identification and requirement analysis & Requirements \\
+W3 & Project planning and elevator pitch & Project Concept \\
+W4 & Proposal and initial system design & Project Proposal \\
+W5--W6 & UML, database analysis and UI design & System Design \\
+W7 & Initial implementation & Prototype 1 \\
+W8 & Prototype evaluation and improvement planning & Improvement Plan \\
+W9--W10 & Core application development & Functional Modules \\
+W11--W12 & System integration and testing & Integrated Prototype \\
+W13 & Buffer, debugging and improvements & Stabilized System \\
+W14 & Final feature refinement & Improved Prototype \\
+W15 & Second prototype and evaluation & Prototype 2 \\
+W16 & Final testing and improvements & Final Candidate \\
+W17 & Final prototype, presentation and documentation & Final Project \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
-\section{Development Methodology}
-
-The project will follow an incremental development approach.
-
-The development phases are:
-
-\begin{enumerate}
-    \item Requirement Analysis
-    \item System Design
-    \item Database Design
-    \item Prototype Development
-    \item Testing and Improvement
-    \item Final Deployment and Documentation
-\end{enumerate}
-
-
+% =========================================================
+% 10. EXPECTED OUTCOMES
+% =========================================================
 
 \section{Expected Outcomes}
 
-At the end of the project, the system will provide:
+At the end of the project, the following outcomes are expected:
 
 \begin{itemize}
-    \item A functional web-based resource booking application.
-    \item Efficient resource scheduling.
-    \item Reduced booking conflicts.
-    \item Improved resource management.
-    \item Complete software documentation.
+    \item A functional web-based campus resource booking system.
+    \item A centralized platform for managing campus resources.
+    \item Reduced chances of double booking and scheduling conflicts.
+    \item Improved visibility of resource availability.
+    \item Efficient management of booking requests.
+    \item Booking history and resource utilization information.
+    \item Role-based access for users and administrators.
+    \item Complete project documentation following software engineering practices.
 \end{itemize}
 
 
+% =========================================================
+% 11. FUTURE ENHANCEMENTS
+% =========================================================
 
 \section{Future Enhancements}
 
-Future improvements may include:
+The following features may be considered as future enhancements depending on the available development time:
 
 \begin{itemize}
-    \item Email notifications.
+    \item Email notifications for booking status and reminders.
     \item QR-based booking verification.
+    \item Advanced resource utilization analytics.
     \item Mobile application support.
-    \item AI-based resource utilization prediction.
+    \item Automated maintenance scheduling for resources.
+    \item AI-based prediction of resource demand.
+\end{itemize}
+
+\section{Risks and Mitigation}
+
+The following risks have been identified during the initial
+planning of the project:
+
+\begin{itemize}
+
+    \item \textbf{Learning Curve:}
+    Developing the Java web application may require learning new
+    technologies. This will be addressed through incremental
+    development, beginning with Java, JDBC, and basic web
+    application concepts.
+
+    \item \textbf{Database Integration:}
+    The existing Oracle database may require modifications during
+    application integration. The database schema will therefore be
+    reviewed and tested before integration.
+
+    \item \textbf{Limited Development Time:}
+    The project must be completed alongside regular coursework.
+    Core booking functionality will therefore be prioritized before
+    optional features.
+
+    \item \textbf{Scope Expansion:}
+    Additional features may increase development complexity.
+    Optional features will only be implemented after the core
+    system is functional.
+
 \end{itemize}
 
 
+% =========================================================
+% 12. TEAM DETAILS
+% =========================================================
 
 \section{Team Details}
 
 \begin{center}
-\begin{tabular}{|c|c|}
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{tabular}{|p{4cm}|p{6cm}|}
 \hline
-\textbf{Name} & \textbf{Role} \\
+\textbf{Name} & \textbf{Primary Responsibility} \\
 \hline
-Dhruv Bihani & Backend and Database Development \\
+Dhruv Bihani & Backend Development and Database Integration \\
 \hline
-Aditya Srivastav & Frontend and Testing \\
+Aditya Srivastava & Frontend Development and Testing \\
 \hline
 \end{tabular}
+
 \end{center}
 
+Both team members will collaboratively participate in requirement analysis, system design, documentation, GitHub management, testing, presentations, and final deployment.
 
+
+% =========================================================
+% END
+% =========================================================
 
 \end{document}
+```

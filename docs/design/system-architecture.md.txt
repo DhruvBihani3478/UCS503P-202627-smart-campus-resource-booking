@@ -1,0 +1,105 @@
+# System Architecture
+
+## 1. Overview
+
+The Smart Campus Resource Booking System will follow a layered web application architecture. The system will separate the user interface, application logic, and database operations to improve maintainability and organization.
+
+The application will allow students and faculty members to interact with the system through a web browser. Requests from the user interface will be processed by the Java-based backend, which will implement the required business logic and communicate with the Oracle Database.
+
+---
+
+## 2. High-Level Architecture
+
+```text
++----------------------+
+|      Web Browser     |
+| Student / Faculty /  |
+| Administrator        |
++----------+-----------+
+           |
+           v
++----------------------+
+|      Frontend        |
+| HTML / CSS / JS      |
+| Bootstrap            |
++----------+-----------+
+           |
+           v
++----------------------+
+|    Java Web Layer    |
+|   Servlets / JSP     |
++----------+-----------+
+           |
+           v
++----------------------+
+|   Service Layer      |
+|  Application Logic   |
+| Booking Validation   |
+| Role-Based Access    |
++----------+-----------+
+           |
+           v
++----------------------+
+|     Data Access      |
+|       JDBC           |
+| DAO Classes          |
++----------+-----------+
+           |
+           v
++----------------------+
+|   Oracle Database    |
+| Users / Resources /  |
+| Slots / Bookings     |
++----------------------+
+
+
+
+User
+  |
+  v
+Web Interface
+  |
+  v
+Servlet
+  |
+  v
+Booking Service
+  |
+  v
+Booking Validation
+  |
+  v
+Booking DAO
+  |
+  v
+Oracle Database
+  |
+  v
+Response
+  |
+  v
+Updated User Interface
+
+
+User Login
+    |
+    v
+Authentication Servlet
+    |
+    v
+Auth Service
+    |
+    v
+User DAO
+    |
+    v
+Oracle Database
+    |
+    v
+Validate Credentials
+    |
+    v
+Create User Session
+    |
+    v
+Redirect Based on Role

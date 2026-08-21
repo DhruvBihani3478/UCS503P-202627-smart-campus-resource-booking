@@ -1,0 +1,153 @@
+# Application Modules
+
+## 1. Overview
+
+The Smart Campus Resource Booking System will be divided into separate functional modules. Each module will handle a specific part of the application. This modular approach will improve maintainability, organization, and future extensibility.
+
+The main modules of the system are:
+
+1. Authentication and User Management
+2. Resource Management
+3. Slot Management
+4. Booking Management
+5. Administration
+6. Dashboard and Reporting
+
+---
+
+# 2. Authentication and User Management
+
+This module will manage user authentication and access to the system.
+
+## Main Features
+
+- User login
+- User logout
+- Session management
+- Role-based access control
+- Secure password handling
+
+## Supported Roles
+
+- Student
+- Faculty
+- Administrator
+
+After successful authentication, users will be redirected to the appropriate interface based on their role.
+
+---
+
+# 3. Resource Management
+
+This module will manage the campus resources available for booking.
+
+Examples of resources include:
+
+- Classrooms
+- Laboratories
+- Seminar halls
+- Project rooms
+- Other shared facilities
+
+## Main Features
+
+- View resources
+- Add resources
+- Update resource information
+- Remove resources
+- Associate resources with departments
+
+Students and faculty members will primarily be able to view resources, while administrators will manage them.
+
+---
+
+# 4. Slot Management
+
+This module will manage the available booking slots for each resource.
+
+Each slot will contain:
+
+- Resource
+- Date
+- Start time
+- End time
+- Availability status
+
+## Main Features
+
+- Create slots
+- View available slots
+- Update slots
+- Manage slot availability
+
+For the initial version of the project, the existing slot-based booking model from the DBMS project will be retained.
+
+---
+
+# 5. Booking Management
+
+The Booking Management module is the core module of the application.
+
+It will manage the complete booking process.
+
+## Booking Workflow
+
+```text
+User
+  ↓
+Select Resource
+  ↓
+View Available Slots
+  ↓
+Select Slot
+  ↓
+Submit Booking Request
+  ↓
+Validate Availability
+  ↓
+Create Booking
+  ↓
+Booking Status: PENDING
+  ↓
+Administrator Review
+  ↓
+APPROVED / REJECTED
+
+
+                 +------------------+
+                 | Authentication   |
+                 +--------+---------+
+                          |
+                          v
+              +-----------+-----------+
+              | Role-Based Access     |
+              +-----------+-----------+
+                          |
+          +---------------+---------------+
+          |                               |
+          v                               v
++-------------------+             +-------------------+
+| User Functions    |             | Admin Functions   |
++--------+----------+             +--------+----------+
+         |                                 |
+         v                                 v
++-------------------+             +-------------------+
+| View Resources    |             | Manage Resources  |
++--------+----------+             +--------+----------+
+         |                                 |
+         v                                 v
++-------------------+             +-------------------+
+| View Slots        |             | Manage Slots      |
++--------+----------+             +--------+----------+
+         |                                 |
+         v                                 v
++-------------------+             +-------------------+
+| Create Booking    |             | Manage Bookings   |
++--------+----------+             +--------+----------+
+         |                                 |
+         +----------------+----------------+
+                          |
+                          v
+                 +------------------+
+                 | Oracle Database  |
+                 +------------------+
