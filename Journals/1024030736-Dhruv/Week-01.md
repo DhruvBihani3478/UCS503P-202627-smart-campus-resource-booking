@@ -1,93 +1,115 @@
-# Week 01 – Project Selection and Initial Analysis
+# Weekly Work Journal
 
 **Name:** Dhruv Bihani  
 **Roll Number:** 1024030736  
 **Course:** UCS503 – Software Engineering  
 **Project:** Smart Campus Resource Booking System  
 
-## Work Completed
+---
 
-During the first week, I finalized the project idea for the UCS503 Software Engineering semester project. The project, titled **Smart Campus Resource Booking System**, is an extension of a Resource Booking System that I had previously developed as part of a DBMS project using Oracle Database.
+## Week 1: Project Selection and Initial Analysis
 
-Instead of starting with a completely new project, I decided to build upon the existing database system and extend it into a complete web-based software application. The objective is to retain the useful database design and booking logic from the previous project while adding application-level features such as a web interface, user authentication, role-based access control, dashboards, and a complete booking workflow.
+### Work Done
 
-I began by reviewing the existing Oracle database implementation. The current database contains the main entities required for the system, including departments, users, resources, slots, bookings, and resource logs. I also reviewed the relationships between these entities and the existing database-level functionality.
+- Finalized the project idea **Smart Campus Resource Booking System**.
+- Decided to extend the existing DBMS Resource Booking System developed previously.
+- Reviewed the existing Oracle database and its main entities.
+- Identified the major users: **Students, Faculty, and Administrators**.
+- Defined the initial scope and major features of the proposed system.
+- Planned to convert the existing database project into a complete web-based application.
 
-The existing project already implements several important operations, including slot availability checking, booking creation, booking cancellation, booking status management, activity logging, and resource usage reporting. Procedures, functions, triggers, views, constraints, and relationships were used to implement these features.
+### Outcome
 
-Based on the initial analysis, I identified that the existing database provides a suitable foundation for the Software Engineering project. However, additional functionality will be required to transform the database project into a complete software system.
+- Finalized the project idea, scope, and initial system direction.
+- Identified the existing database as the foundation for further development.
 
-## Initial Project Direction
+---
 
-The proposed system will provide a centralized platform for managing campus resources such as classrooms, laboratories, seminar halls, and other shared facilities.
+## Week 2: Requirement Analysis and Documentation
 
-The main users of the system will include:
+### Work Done
 
-- Students
-- Faculty members
-- Administrators
+- Analyzed the requirements of the proposed resource booking system.
+- Prepared the **problem statement and project objectives**.
+- Defined functional and non-functional requirements.
+- Identified the main actors and their responsibilities.
+- Defined major use cases such as resource viewing, slot checking, booking, cancellation, and administrative approval.
+- Documented the differences between the existing DBMS project and the proposed software system.
+- Organized the initial project documentation in the GitHub repository.
 
-Users will be able to view available resources and slots, submit booking requests, track booking status, and manage their bookings.
+### Outcome
 
-Administrators will be responsible for managing resources, managing available slots, reviewing booking requests, and approving or rejecting requests.
+- Completed the initial requirement analysis.
+- Defined the major functionality and system requirements.
+- Established the documentation structure for the project.
 
-## Initial Observations
+---
 
-The analysis of the previous DBMS project highlighted the difference between the existing database system and the proposed Software Engineering project.
+## Week 3: System Design and UML Diagrams
 
-The existing project mainly focuses on:
+### Work Done
 
-- Database design
-- SQL operations
-- Tables and relationships
-- Procedures and functions
-- Triggers
-- Views
-- Database-level booking logic
+- Designed the initial system architecture.
+- Analyzed the entities and relationships in the existing database.
+- Prepared the **ER diagram**.
+- Prepared the **Class Diagram**.
+- Prepared the **Use Case Diagram**.
+- Prepared the **Activity Diagram** for the booking process.
+- Prepared the **Sequence Diagram** for the booking workflow.
+- Planned the application structure using Model, DAO, Service, Servlet, Filter, and Utility layers.
 
-The proposed project will extend this work by adding:
+### Outcome
 
-- A web-based user interface
-- User authentication
-- Secure password handling
-- Role-based access control
-- Application-level business logic
-- User and administrator dashboards
-- Complete booking workflow
-- Validation and error handling
-- System testing and documentation
+- Completed the initial system design.
+- Established the overall architecture and workflow of the application.
+- Prepared the major UML diagrams required for implementation.
 
-## Scope Considerations
+---
 
-Since the project has to be completed within one semester, I decided to keep the initial scope focused on the core functionality of the system.
+## Week 4: Java Setup, Database Connection and DAO Implementation
 
-The first version of the application will focus on resource management, slot management, booking requests, booking validation, booking status management, and administrative approval or rejection.
+### Work Done
 
-The existing slot-based booking model will initially be retained because it can reuse the existing database structure and reduce unnecessary complexity during the first prototype.
+- Set up the Java web application using **Maven**.
+- Configured the required Servlet, JSP, JSTL, and Oracle JDBC dependencies.
+- Connected the Java application to the existing **Oracle FreeSQL database** using JDBC.
+- Successfully tested the database connection.
+- Verified the actual database tables and column names.
+- Implemented the main model classes:
+  - `User`
+  - `Department`
+  - `Resource`
+  - `ResourceLog`
+  - `Slot`
+  - `Booking`
+- Implemented the DAO classes for database operations.
+- Tested the DAOs with the live Oracle database.
+- Successfully retrieved users, resources, slots, and bookings from the database.
 
-Additional features such as QR-based verification, mobile application support, and AI-based resource utilization prediction will be considered as future enhancements rather than part of the initial implementation.
+### Outcome
 
-## Learning and Reflection
+- Successfully established Java–Oracle database connectivity.
+- Completed the initial **Model and DAO layers**.
+- Successfully tested database retrieval using the live project database.
+- Established the foundation for implementing the service and web layers.
 
-This week's work helped me understand the importance of analyzing an existing system before extending it. Rather than rewriting the entire database, the existing implementation can be reused as a foundation while the missing software layers are designed and developed separately.
+---
 
-I also understood the importance of maintaining a realistic project scope. A complete software system involves more than database design; it requires requirement analysis, system design, application development, testing, documentation, and iterative improvement.
+## Overall Progress
 
-The initial analysis will help in planning the project in a structured manner and will guide the development of the requirements and system design in the following weeks.
+During the first four weeks, the project progressed from **idea selection and requirement analysis to the initial technical implementation**.
 
-## Plan for Next Week
+The current development flow is:
 
-In the next week, I plan to complete the initial requirement analysis and project documentation.
-
-The planned work includes:
-
-- Documenting the existing database structure.
-- Preparing a comparison between the existing DBMS project and the proposed software system.
-- Finalizing the problem statement.
-- Defining project objectives.
-- Identifying system actors.
-- Preparing functional requirements.
-- Preparing non-functional requirements.
-- Defining the initial use cases of the system.
-
-These activities will provide the foundation for the elevator pitch and initial system design planned for the upcoming weeks.
+```text
+Requirements
+     ↓
+System Design
+     ↓
+Java/Maven Setup
+     ↓
+Oracle Database Connection
+     ↓
+Model Layer
+     ↓
+DAO Layer
