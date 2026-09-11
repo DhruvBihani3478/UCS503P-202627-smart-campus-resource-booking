@@ -1,5 +1,7 @@
 # Weekly Work Journal
 
+## Weekly Work Journal
+
 **Name:** Dhruv Bihani  
 **Roll Number:** 1024030736  
 **Course:** UCS503 – Software Engineering  
@@ -51,12 +53,12 @@
 
 - Designed the initial system architecture.
 - Analyzed the entities and relationships in the existing database.
-- Prepared the **ER diagram**.
+- Prepared the **ER Diagram**.
 - Prepared the **Class Diagram**.
 - Prepared the **Use Case Diagram**.
 - Prepared the **Activity Diagram** for the booking process.
 - Prepared the **Sequence Diagram** for the booking workflow.
-- Planned the application structure using Model, DAO, Service, Servlet, Filter, and Utility layers.
+- Planned the application structure using **Model, DAO, Service, Servlet, Filter, and Utility** layers.
 
 ### Outcome
 
@@ -71,7 +73,7 @@
 ### Work Done
 
 - Set up the Java web application using **Maven**.
-- Configured the required Servlet, JSP, JSTL, and Oracle JDBC dependencies.
+- Configured the required **Servlet, JSP, JSTL, and Oracle JDBC** dependencies.
 - Connected the Java application to the existing **Oracle FreeSQL database** using JDBC.
 - Successfully tested the database connection.
 - Verified the actual database tables and column names.
@@ -85,6 +87,7 @@
 - Implemented the DAO classes for database operations.
 - Tested the DAOs with the live Oracle database.
 - Successfully retrieved users, resources, slots, and bookings from the database.
+- Added the `PASSWORD_HASH` column to the `USERS` table to support secure password storage.
 
 ### Outcome
 
@@ -95,21 +98,39 @@
 
 ---
 
-## Overall Progress
+## Week 5: Service Layer and Business Logic
 
-During the first four weeks, the project progressed from **idea selection and requirement analysis to the initial technical implementation**.
+### Work Done
 
-The current development flow is:
+- Implemented the main service-layer classes:
+  - `AuthService`
+  - `ResourceService`
+  - `SlotService`
+  - `BookingService`
+  - `AdminService`
+- Added input validation to the service layer.
+- Implemented resource management operations.
+- Implemented slot creation, retrieval, availability checking, updating, and deletion.
+- Implemented booking creation and validation.
+- Added booking status operations such as:
+  - `PENDING`
+  - `APPROVED`
+  - `REJECTED`
+  - `CANCELLED`
+- Implemented user, resource, slot, booking, and resource-log operations required by the administrator.
+- Connected the service layer with the existing DAO layer.
+
+### Outcome
+
+- Completed the main **Service Layer**.
+- Added business validation between the web layer and database layer.
+- Established the application flow:
 
 ```text
-Requirements
-     ↓
-System Design
-     ↓
-Java/Maven Setup
-     ↓
-Oracle Database Connection
-     ↓
-Model Layer
-     ↓
-DAO Layer
+Servlet
+   ↓
+Service
+   ↓
+DAO
+   ↓
+Oracle Database
