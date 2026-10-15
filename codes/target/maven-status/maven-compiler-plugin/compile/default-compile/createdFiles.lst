@@ -3,6 +3,7 @@ com\smartcampus\filter\AuthenticationFilter.class
 com\smartcampus\service\AuthServiceTest.class
 com\smartcampus\util\PasswordUtil.class
 com\smartcampus\service\AdminService.class
+com\smartcampus\servlet\SlotServlet.class
 com\smartcampus\dao\UserDAOTest.class
 com\smartcampus\service\AuthService.class
 com\smartcampus\model\ResourceLog.class
@@ -15,6 +16,7 @@ com\smartcampus\service\ResourceService.class
 com\smartcampus\model\Resource.class
 com\smartcampus\model\Booking.class
 com\smartcampus\servlet\AuthenticationServlet.class
+com\smartcampus\servlet\BookingServlet.class
 com\smartcampus\model\User.class
 com\smartcampus\service\SlotService.class
 com\smartcampus\util\DBconnection.class
@@ -26,3 +28,4 @@ com\smartcampus\service\BookingService.class
 com\smartcampus\dao\ResourceDAO.class
 com\smartcampus\util\DBconnectionTest.class
 com\smartcampus\dao\ResourceLogDAO.class
+com\smartcampus\servlet\ResourceServlet.class
