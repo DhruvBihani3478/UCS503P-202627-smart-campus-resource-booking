@@ -5,7 +5,7 @@
 **Name:** Dhruv Bihani  
 **Roll Number:** 1024030736  
 **Course:** UCS503 – Software Engineering  
-**Project:** Smart Campus Resource Booking System  
+**Project:** Smart Campus Resource Booking System
 
 ---
 
@@ -134,3 +134,94 @@ Service
 DAO
    ↓
 Oracle Database
+```
+
+---
+
+## Week 6: Authentication, JSP Pages and Web Layer Implementation
+
+### Work Done
+
+- Implemented the authentication functionality using `AuthService` and `AuthenticationServlet`.
+- Added password hashing using `PBKDF2WithHmacSHA256` through the `PasswordUtil` utility class.
+- Configured HTTP session management to maintain logged-in user information.
+- Stored relevant session attributes, including user ID, username, and user role.
+- Implemented the `AuthenticationFilter` to support authentication checks for protected resources.
+- Developed JSP pages for the main application features:
+  - `login.jsp`
+  - `dashboard.jsp`
+  - `resources.jsp`
+  - `slots.jsp`
+  - `bookings.jsp`
+  - `admin.jsp`
+  - `index.jsp`
+- Configured the application using `web.xml` and Servlet 4.0-compatible settings.
+- Deployed the application using Apache Tomcat 9 during development and tested the login functionality.
+- Reviewed the integration between the web layer, service layer, and database layer.
+
+### Outcome
+
+- Implemented the initial authentication and session-management functionality.
+- Established the JSP-based web interface for students, faculty, and administrators.
+- Created the foundation for protecting application resources through authentication checks.
+- Connected the web layer with the existing Java business logic.
+
+---
+
+## Week 7: REST API Development and Booking Functionality
+
+### Work Done
+
+- Started implementing API endpoints to allow the frontend to communicate with the Java backend.
+- Implemented and tested the resource API through `ResourceServlet`.
+- Successfully retrieved resource data from the Oracle database in JSON format.
+- Reviewed the existing booking-related classes, including `Booking`, `BookingDAO`, `BookingService`, `SlotDAO`, and `SlotService`.
+- Implemented the initial `BookingServlet` using the `/api/bookings` endpoint.
+- Added support for GET requests to check the booking API and identify the logged-in user's session.
+- Added initial POST request handling for booking creation.
+- Implemented validation for slot IDs, booking dates, and session-based user authentication.
+- Added logic to check slot availability before attempting to create a booking.
+- Used the Oracle sequence `SEQ_BOOKING` to generate booking IDs.
+- Added JSON responses and basic error handling for API requests.
+- Configured cross-origin request handling for the React development server.
+- Resolved a Java compilation error related to exception handling in the booking servlet.
+
+### Outcome
+
+- Successfully tested resource retrieval through the backend API.
+- Implemented the initial structure for booking API integration.
+- Added preliminary validation for booking requests and slot availability.
+- Improved communication between the web layer and backend services.
+- Prepared the backend for further integration with the React frontend.
+
+---
+
+## Week 8: Build Configuration, Compilation and Frontend Integration Preparation
+
+### Work Done
+
+- Reviewed the Maven project configuration and Java web application structure.
+- Ran the Maven clean and package commands to rebuild the application.
+- Resolved compilation issues encountered during the development of the booking servlet.
+- Successfully completed the Maven build process and generated the web application archive (WAR).
+- Reviewed the deployment procedure for Apache Tomcat 9.
+- Prepared the application for redeployment and further API testing.
+- Reviewed the existing React frontend and identified the need to connect its resource and booking pages to the Java backend.
+- Identified areas where frontend mock data and browser `localStorage` need to be replaced or integrated with backend API calls.
+- Planned the next integration steps for resource retrieval, slot availability, booking creation, and booking history.
+
+### Outcome
+
+- Successfully compiled and packaged the Java web application using Maven.
+- Generated the WAR file required for deployment to Apache Tomcat.
+- Prepared the backend for the next deployment and integration-testing stage.
+- Identified the remaining work required to avoid duplicated frontend and backend data handling.
+
+---
+
+## Overall Progress
+
+The project has progressed from requirement analysis and system design to the implementation of the Java backend, database access, business logic, authentication, JSP pages, and initial API endpoints.
+
+The next phase will focus on deploying and testing the latest backend build, integrating the existing React frontend with the Java APIs, and validating the complete resource-booking workflow against the Oracle database.
+
